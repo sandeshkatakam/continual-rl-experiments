@@ -1,0 +1,30 @@
+defaults:
+  - _self_
+  - override hydra/hydra_logging: disabled
+  - override hydra/job_logging: disabled
+
+# Experiment settings
+experiment:
+  name: "default_experiment"
+  seed: 42
+  num_tasks: 5
+  episodes_per_task: 1000
+
+# Model settings
+model:
+  hidden_size: 256
+  learning_rate: 0.001
+  gamma: 0.99
+
+# Logging settings
+logging:
+  wandb:
+    project: "continual-rl-research"
+    entity: "your-username"
+  log_interval: 100
+  save_interval: 1000
+
+# Environment settings
+env:
+  name: "CartPole-v1"
+  max_steps: 500
